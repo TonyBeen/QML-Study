@@ -1,6 +1,6 @@
 import QtQuick 2.15
 import QtQuick.Window 2.15
-import CPPRegister 1.0
+import QMLApply 1.0
 
 Window {
     width: 640
@@ -8,7 +8,7 @@ Window {
     visible: true
     title: qsTr("Hello World")
 
-    CPPRegister {
+    QMLApplyObject {
         objectName: "cpp_register"
         stringType: "Hello World"
     }

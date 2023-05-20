@@ -14,9 +14,9 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
     QQmlEngine qmlEngine;
 
-    // 第一个参数和第四个必须一致才可以, 否则会在创建QML时报错
-    // 或许可以有其他方式修改QML引用的名字, 但没必要这么麻烦
-    qmlRegisterType<CPPRegister>("CPPRegister", 1, 0, "CPPRegister");
+    // 第一个参数是导入时使用的名字
+    // 第四个参数是对象名称
+    qmlRegisterType<CPPRegister>("QMLApply", 1, 0, "QMLApplyObject");
 
     // 在创建qml之前注册类型, 否则报错未定义类型, 导致创建失败
     QQmlComponent* pComponent = new QQmlComponent(&qmlEngine, "qrc:/main.qml");
